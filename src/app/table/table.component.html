@@ -1,0 +1,39 @@
+<table id="table">
+  <thead>
+    <tr class="thead">
+      <th>Intestazione</th>
+      <th>Azienda</th>
+      <th>Bank</th>
+      <th>IBAN</th>
+      <th>Alias</th>
+      <th>Divisa</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let type of dataService.types">
+    <tr (click)="toggle[type] = !toggle[type]">
+      <td colspan="6">
+        <i class="fa fa-solid fa-sort-down"></i>{{ type | transformType }}
+      </td>
+    </tr>
+    <tr
+      *ngFor="let account of dataService.filteredData[type]"
+      [hidden]="toggle[type]"
+    >
+      <td>
+        <i
+          [ngClass]="
+            account.is_default_account
+              ? 'fa fa-regular fa-star starYellow'
+              : 'fa fa-regular fa-star starGrey'
+          "
+        ></i
+        >{{ account.account_naming }}
+      </td>
+      <td>{{ account.company_name }}</td>
+      <td>{{ account.abi_code }}</td>
+      <td>{{ account.iban }}</td>
+      <td>{{ account.alias ? account.alias : "empty" }}</td>
+      <td>{{ account.currency ? account.currency : "empty" }}</td>
+    </tr>
+  </tbody>
+</table>

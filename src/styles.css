@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 1000px;
+  height: 50px;
+}
+
+body {
+  background-color: #e9e9e9;
+}
+
+.thead th {
+  color: #797979;
+  background-color: #f1f1f1;
+  height: 50px;
+}
+
+tbody td:last-child {
+  padding-right: 3em;
+}
+tbody td {
+  background-color: #ffffff;
+}
+tbody tr:last-child td:last-child {
+  border-radius: 0px 0px 5px 0px;
+}
+tbody tr:last-child td:first-child {
+  border-radius: 0px 0px 5px 5px;
+}
+
+tbody tr:first-child td:last-child {
+  border-radius: 5px 5px 0px 0px;
+}
+tbody tr:first-child td:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 40px;
+}
+tbody td {
+  padding: 20px;
+}
+tbody tr:not(:first-child) td {
+  text-align: center;
+  color: rgb(83, 83, 83);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+tbody::before {
+  content: "";
+  display: block;
+  height: 10px;
+}
+i {
+  margin-right: 10px;
+}
+.starYellow::before {
+  color: rgb(1, 111, 255);
+  margin-right: 10px;
+  font-size: 20px;
+}
+.starGrey::before {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+input {
+  height: 45px;
+  font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container {
+  display: flex;
+  margin-left: 25%;
+  gap: 20px;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  background-color: #e2e2e2;
+  padding-bottom: 20px;
+}
+.filter-container,
+select,
+option {
+  font-size: 20px;
+}
+select {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.filter-container {
+  width: 80%;
+  margin: 0 auto;
+}
+select {
+  width: 100%;
+}
+p {
+  margin: 0 0 0 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

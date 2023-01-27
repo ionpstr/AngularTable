@@ -1,0 +1,29 @@
+<div class="filter">
+  <input
+    id="input"
+    type="text"
+    placeholder="search"
+    (keyup)="handleInput($event)"
+  />
+  <div class="filter-container">
+    <p>Filter By Type</p>
+    <select name="type" id="type" multiple (change)="handleSelectType($event)">
+      <option *ngFor="let type of types" [value]="type">
+        {{ type | transformType }}
+      </option>
+    </select>
+  </div>
+  <div class="filter-container">
+    <p>Filter By Azienda</p>
+    <select
+      name="azienda"
+      id="azienda"
+      multiple
+      (change)="handleSelectAzienda($event)"
+    >
+      <option *ngFor="let name of azienda" [value]="name">
+        {{ name }}
+      </option>
+    </select>
+  </div>
+</div>
