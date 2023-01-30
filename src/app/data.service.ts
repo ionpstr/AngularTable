@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Account } from './account';
 import data1 from '../assets/accounts.json';
+import { types } from './types';
 @Injectable({
   providedIn: 'root',
 })
@@ -12,7 +13,7 @@ export class DataService {
   data: any;
   azienda: String[] = [];
   filteredData: any = [];
-  types: any;
+  types: any[] = [];
   map(data: any) {
     let dataMap: any = {};
     let iban: any = {};
@@ -50,8 +51,13 @@ export class DataService {
                   funct['accounts'][0]['types'][i]['currency'],
                   funct['accounts'][0]['types'][i]['type']
                 );
-
                 let temp = funct['accounts'][0]['types'][i]['type'];
+                for (let [key, item] of Object.entries(types)) {
+                  if (item.includes(funct['accounts'][0]['types'][i]['type'])) {
+                    temp = types[key as keyof typeof types][0];
+                  }
+                }
+
                 if (this.azienda.indexOf(company_name) < 0) {
                   this.azienda.push(company_name);
                 }
@@ -68,8 +74,11 @@ export class DataService {
         }
       }
     }
+
     this.data = dataMap;
     this.filteredData = dataMap;
+    console.log(this.data);
+
     return dataMap;
   }
   filter(inputText: string, selectedType: String[], selectedAzienda: String[]) {

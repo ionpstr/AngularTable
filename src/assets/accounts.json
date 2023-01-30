@@ -96,6 +96,16 @@
                   "account_naming": "A.C. FILATURA NORDMSK",
                   "is_default_account": null,
                   "tax_code": "00107140055"
+                },
+                {
+                  "status": "ACTIVE",
+                  "type": "06",
+                  "alias": null,
+                  "is_passive_bank": false,
+                  "currency": null,
+                  "account_naming": "A.C. FILATURA NORDMSK",
+                  "is_default_account": null,
+                  "tax_code": "00107140055"
                 }
               ],
               "roleAccount": {
@@ -129,6 +139,16 @@
                 {
                   "status": "ACTIVE",
                   "type": "01",
+                  "alias": null,
+                  "is_passive_bank": false,
+                  "currency": null,
+                  "account_naming": "A.C. FILATURA NORDMSK",
+                  "is_default_account": null,
+                  "tax_code": "00107140055"
+                },
+                {
+                  "status": "ACTIVE",
+                  "type": "21",
                   "alias": null,
                   "is_passive_bank": false,
                   "currency": null,

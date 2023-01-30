@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { types } from '../types';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -48,7 +49,11 @@ export class FilterComponent {
     let values = [];
     for (let i of options) {
       if (i.selected) {
-        values.push(i.value);
+        for (let [key, item] of Object.entries(types)) {
+          if (item.includes(i.value)) {
+            values.push(...types[key as keyof typeof types]);
+          }
+        }
       }
     }
     this.selectedType = values;
